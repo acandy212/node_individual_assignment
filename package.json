@@ -1,0 +1,22 @@
+{
+  "name": "node_individual_assignment",
+  "version": "1.0.0",
+  "description": "in class assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acandy212/node_individual_assignment.git"
+  },
+  "author": "Amanda Candies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acandy212/node_individual_assignment/issues"
+  },
+  "homepage": "https://github.com/acandy212/node_individual_assignment#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
