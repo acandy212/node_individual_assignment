@@ -17,6 +17,11 @@ const Todo = require('./models/todo.model');
 // db.on('error', console.error.bind(console,"MongoDb connection error: "))
 
 
+//Use this site to figure out how to pull data using axios
+        //https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/ 
+
+
+
 app.get('/', function(req, res){
     let comicData = {}
     axios.get('https://xkcd.com/614/info.0.json').then(function(response){
