@@ -23,45 +23,34 @@ db.on('error', console.error.bind(console,"MongoDb connection error: "))
 
 
 app.get('/', function(req, res){
-    let comicData = {}
-    axios.get('https://xkcd.com/614/info.0.json').then(function(response){
-      
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
-      
-      console.log(getRandomInt(2682));
-      // expected output: Random number between 1 and 2682
-     
-    }).catch(function(error){
-        res.json({"Error: ": error})
+  let comicData = {}
+  axios.get('https://xkcd.com/info.0.json').then(function(response){
+    Todo.find(function(err, todo){
+        console.log(todo)
+          if(err){
+          res.json({"Error: ": err})
+          } else {
+          res.render('todo.ejs', {todoList: todo, comicData: response.data});
+          }
       })
-
-    // Todo.find(function(err, todo){
-    //   console.log(todo)
-    //   function getRandomInt(max) {
+    }).catch(function(error){
+         res.json({"Error: ": error})
+          })
+          
+      
+  function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
   
   console.log(getRandomInt(2682));
-  // expected output: Random number between 1 and 2682
- 
-}).catch(function(error){
-    res.json({"Error: ": error})
-  })
-  })
-//   function getRandomInt(max) {
-//     return Math.floor(Math.random() * max);
-//   }
-  
-//   console.log(getRandomInt(2682));
-//   // expected output: Random number between 1 and 2682
+  //expected output: Random number between 1 and 2682
+})
  
 // }).catch(function(error){
 //     res.json({"Error: ": error})
 //   })
     
-// })
+//  })
 
 
 app.listen(3000, function(){
