@@ -24,7 +24,7 @@ db.on('error', console.error.bind(console,"MongoDb connection error: "))
 
 app.get('/', function(req, res){
   let comicData = {}
-  axios.get('https://xkcd.com/info.0.json').then(function(response){
+  axios.get('https://xkcd.com/614/info.0.json ').then(function(response){
     Todo.find(function(err, todo){
         console.log(todo)
           if(err){
